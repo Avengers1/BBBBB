@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/ETDBot.js'
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/ETDBot.js';
 
     settings.prototype.afkTime = 30 * 60 * 1000;
 
@@ -388,7 +388,7 @@
           secsLastActive = timeSinceLastActivity / 1000;
           if (user.getWarningCount() === 0) {
             user.warn();
-            _results.push(API.sendChat("@" + user.getUser().username + "I haven't seen you chat in about 30 hour. Are you AFK?  If you don't show activity in 2 minutes I will remove you from the booth."));
+            _results.push(API.sendChat("@" + user.getUser().username + ", I haven't seen you chat in about 30 hour. Are you AFK?  If you don't show activity in 2 minutes I will remove you from the booth."));
           } else if (user.getWarningCount() === 1) {
             lastWarned = user.getLastWarning();
             timeSinceLastWarning = now.getTime() - lastWarned.getTime();
@@ -396,7 +396,7 @@
             if (timeSinceLastWarning > twoMinutes) {
               user.warn();
               warnMsg = "@" + user.getUser().username;
-              warnMsg += "I have not seen you vote for 32 minutes. Vote for the next minute or I will remove it, this is your last warning.";
+              warnMsg += ", I have not seen you vote for 32 minutes. Vote for the next minute or I will remove it, this is your last warning.";
               _results.push(API.sendChat(warnMsg));
             } else {
               _results.push(void 0);
@@ -408,7 +408,7 @@
             if (timeSinceLastWarning > oneMinute) {
               DJs = API.getDJs();
               if (DJs.length > 0 && DJs[0].id !== user.getUser().id) {
-                API.sendChat("@" + user.getUser().username + "I Have given you 2 warnings. Please stay active by chatting.");
+                API.sendChat("@" + user.getUser().username + ", I Have given you 2 warnings. Please stay active by chatting.");
                 API.moderateRemoveDJ(id);
                 _results.push(user.warn());
               } else {
