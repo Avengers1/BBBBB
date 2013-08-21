@@ -497,10 +497,12 @@
       var user;
       user = data.users[this.msgData.fromID].getUser();
       switch (this.rankPrivelege) {
-        case 'host':
+         case 'host':
           return user.permission === 5;
         case 'cohost':
           return user.permission >= 4;
+        case 'mod':
+          return user.permission >= 3;
         case 'manager':
           return user.permission >= 3;
         case 'bouncer':
