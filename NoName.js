@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName%201.0.0';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName.js';
 
     settings.prototype.afkTime = 60 * 60 * 1000;
 
@@ -344,8 +344,14 @@
 
   })();
 
-   pupOnline = function() {
-    return API.sendChat("/me: NoNameBOT version ON!");
+  pupOnline = function() {
+    var currentversion, me, myname;
+
+    me = API.getSelf();
+    myname = me.username;
+    currentversion = "1.0";
+    log("ETDBOT NoNameEdit " + currentversion + " started");
+    return API.sendChat("Have no fear, " + myname + " is here!");
   };
 
   populateUserData = function() {
@@ -1097,7 +1103,7 @@
     }
 
     lockCommand.prototype.init = function() {
-      this.command = '!lock';
+      this.command = '!trava';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1119,7 +1125,7 @@
     }
 
     unlockCommand.prototype.init = function() {
-      this.command = '!unlock';
+      this.command = '!destrava';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1846,7 +1852,7 @@
       sender = API.getUser(chat.fromID);
       if (!sender.ambassador && !sender.moderator && !sender.owner && !sender.superuser) {
         if (!data.users[chat.fromID]["protected"]) {
-          API.sendChat("No Spam");
+          API.sendChat("Sem spam");
           return API.moderateDeleteChat(chat.chatID);
         } else {
           return API.sendChat("I'm supposed to kick you, But we are all here to party right!");
@@ -1864,6 +1870,16 @@
     }
   };
   
+  beggar = function(chat) {
+    var msg, r, responses;
+    msg = chat.message.toLowerCase();
+    responses = ["@{beggar}  ", "@{beggar} ", "@{beggar} ", "@{beggar} "];
+    r = Math.floor(Math.random() * responses.length);
+    if (msg.indexOf('¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1) {
+      return API.sendChat(responses[r].replace("{beggar}", chat.from));
+    }
+  };
+
   chatUniversals = function(chat) {
     data.activity(chat);
     antispam(chat);
