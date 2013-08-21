@@ -344,14 +344,8 @@
 
   })();
 
-  pupOnline = function() {
-    var currentversion, me, myname;
-
-    me = API.getSelf();
-    myname = me.username;
-    currentversion = "1.0";
-    log("ETDBOT NoNameEdit " + currentversion + " started");
-    return API.sendChat("Have no fear, " + myname + " is here!");
+   pupOnline = function() {
+    return API.sendChat("/me: NoNameBOT version ON!");
   };
 
   populateUserData = function() {
@@ -1103,7 +1097,7 @@
     }
 
     lockCommand.prototype.init = function() {
-      this.command = '!trava';
+      this.command = '!lock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1125,7 +1119,7 @@
     }
 
     unlockCommand.prototype.init = function() {
-      this.command = '!destrava';
+      this.command = '!unlock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1852,7 +1846,7 @@
       sender = API.getUser(chat.fromID);
       if (!sender.ambassador && !sender.moderator && !sender.owner && !sender.superuser) {
         if (!data.users[chat.fromID]["protected"]) {
-          API.sendChat("Sem spam");
+          API.sendChat("No Spam");
           return API.moderateDeleteChat(chat.chatID);
         } else {
           return API.sendChat("I'm supposed to kick you, But we are all here to party right!");
@@ -1870,16 +1864,6 @@
     }
   };
   
-  beggar = function(chat) {
-    var msg, r, responses;
-    msg = chat.message.toLowerCase();
-    responses = ["@{beggar}  ", "@{beggar} ", "@{beggar} ", "@{beggar} "];
-    r = Math.floor(Math.random() * responses.length);
-    if (msg.indexOf('¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1) {
-      return API.sendChat(responses[r].replace("{beggar}", chat.from));
-    }
-  };
-
   chatUniversals = function(chat) {
     data.activity(chat);
     antispam(chat);
