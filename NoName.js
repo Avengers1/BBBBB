@@ -57,20 +57,21 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName.js';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SIqueManda/botcafe/master/cafe';
 
-    settings.prototype.afkTime = 60 * 60 * 1000;
+    settings.prototype.afkTime = 30 * 60 * 1000;
 
     settings.prototype.songIntervalMessages = [
       {
         interval: 7,
         offset: 0,
-        msg: "All praise our lord and savior @NoName"
-      }, {
+        msg: "All praise our lord and savior NoName "
+      },{
         interval: 5,
         offset: 0,
-        msg: "Stay active in chat while in line. We remove AFK DJ's at the booth!"
-      }
+        msg: "/em: Make sure that you're voting or you will be removed from the wait list and from the DJ Booth."
+      },{
+
     ];
 
     settings.prototype.songCount = 0;
@@ -345,13 +346,7 @@
   })();
 
   pupOnline = function() {
-    var currentversion, me, myname;
-
-    me = API.getSelf();
-    myname = me.username;
-    currentversion = "1.0";
-    log("ETDBOT NoNameEdit " + currentversion + " started");
-    return API.sendChat("Have no fear, " + myname + " is here!");
+    return API.sendChat("/me: NoName versão Cafeina 100%. ON!");
   };
 
   populateUserData = function() {
@@ -393,7 +388,7 @@
           secsLastActive = timeSinceLastActivity / 1000;
           if (user.getWarningCount() === 0) {
             user.warn();
-            _results.push(API.sendChat("@" + user.getUser().username + ", I haven't seen you chat in about 30 minutes. Are you AFK?  If you don't show activity in 4 minutes I will remove you from the booth."));
+            _results.push(API.sendChat("@" + user.getUser().username + "I haven't seen you chat in about 30 hour. Are you AFK?  If you don't show activity in 2 minutes I will remove you from the booth."));
           } else if (user.getWarningCount() === 1) {
             lastWarned = user.getLastWarning();
             timeSinceLastWarning = now.getTime() - lastWarned.getTime();
@@ -401,7 +396,7 @@
             if (timeSinceLastWarning > twoMinutes) {
               user.warn();
               warnMsg = "@" + user.getUser().username;
-              warnMsg += ", I Have given you 1 warning. Please stay active by chatting.";
+              warnMsg += "I have not seen you vote for 32 minutes. Vote for the next minute or I will remove it, this is your last warning.";
               _results.push(API.sendChat(warnMsg));
             } else {
               _results.push(void 0);
@@ -413,7 +408,7 @@
             if (timeSinceLastWarning > oneMinute) {
               DJs = API.getDJs();
               if (DJs.length > 0 && DJs[0].id !== user.getUser().id) {
-                API.sendChat("@" + user.getUser().username + ", I Have given you 2 warnings. Please stay active by chatting.");
+                API.sendChat("@" + user.getUser().username + "I Have given you 2 warnings. Please stay active by chatting.");
                 API.moderateRemoveDJ(id);
                 _results.push(user.warn());
               } else {
@@ -626,20 +621,18 @@
     }
 
     newSongsCommand.prototype.init = function() {
-      this.command = '!newsongs';
+      this.command = '!musicanova';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
 
     newSongsCommand.prototype.functionality = function() {
       var arts, cMedia, chans, chooseRandom, mChans, msg, selections, u, _ref2;
-
       mChans = this.memberChannels.slice(0);
       chans = this.channels.slice(0);
       arts = this.artists.slice(0);
       chooseRandom = function(list) {
         var l, r;
-
         l = list.length;
         r = Math.floor(Math.random() * l);
         return list.splice(r, 1);
@@ -659,7 +652,7 @@
       selections['channels'].push(chooseRandom(chans));
       selections['channels'].push(chooseRandom(chans));
       cMedia = API.getMedia();
-      if (_ref2 = cMedia.author, __indexOf.call(arts, _ref2) >= 0) {
+      if ((cMedia != null) && (_ref2 = cMedia.author, __indexOf.call(arts, _ref2) >= 0)) {
         selections['artist'] = cMedia.author;
       } else {
         selections['artist'] = chooseRandom(arts);
@@ -711,7 +704,7 @@
 
     function themeCommand() {
       _ref2 = themeCommand.__super__.constructor.apply(this, arguments);
-      return _ref2;
+      return _ref3;
     }
 
     themeCommand.prototype.init = function() {
@@ -737,7 +730,7 @@
 
     function rulesCommand() {
       _ref3 = rulesCommand.__super__.constructor.apply(this, arguments);
-      return _ref3;
+      return _ref4;
     }
 
     rulesCommand.prototype.init = function() {
@@ -764,7 +757,6 @@
 
     return rulesCommand;
 
-
   })(Command);
 
   roomHelpCommand = (function(_super) {
@@ -772,7 +764,7 @@
 
     function roomHelpCommand() {
       _ref4 = roomHelpCommand.__super__.constructor.apply(this, arguments);
-      return _ref4;
+      return _ref5;
     }
 
     roomHelpCommand.prototype.init = function() {
@@ -814,7 +806,7 @@
 
     sourceCommand.prototype.functionality = function() {
       var msg;
-      msg = ' BOT created by Backus and edited by NoName ';
+      msg = ' Bot Created by Backus and edited by NoName ';
       return API.sendChat(msg);
     };
 
@@ -866,7 +858,7 @@
 
     badQualityCommand.prototype.functionality = function() {
       var msg;
-      msg = "Não gostei da sua musica, tente melhorar da proxima vez";
+      msg = "I Dont like your music, try play a better music at next time";
       return API.sendChat(msg);
     };
 
@@ -905,7 +897,7 @@
 
     function afksCommand() {
       _ref5 = afksCommand.__super__.constructor.apply(this, arguments);
-      return _ref5;
+      return _ref10;
     }
 
     afksCommand.prototype.init = function() {
@@ -939,32 +931,32 @@
 
     return afksCommand;
 
-
   })(Command);
 
   allAfksCommand = (function(_super) {
     __extends(allAfksCommand, _super);
 
     function allAfksCommand() {
-      _ref11 = allAfksCommand.__super__.constructor.apply(this, arguments);
+      _ref6 = allAfksCommand.__super__.constructor.apply(this, arguments);
       return _ref11;
     }
 
     allAfksCommand.prototype.init = function() {
       this.command = '!allafks';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'manager';
+      return this.rankPrivelege = 'mod';
     };
 
     allAfksCommand.prototype.functionality = function() {
       var msg, now, u, uAfk, usrs, _i, _len;
+
       msg = '';
       usrs = API.getUsers();
       for (_i = 0, _len = usrs.length; _i < _len; _i++) {
         u = usrs[_i];
         now = new Date();
         uAfk = now.getTime() - data.users[u.id].getLastActivity().getTime();
-        if (uAfk > (30 * 60 * 1000)) {
+        if (uAfk > (10 * 60 * 1000)) {
           if (msToStr(uAfk) !== false) {
             msg += u.username + ' - ' + msToStr(uAfk);
             msg += '. ';
@@ -987,11 +979,11 @@
 
     function statusCommand() {
       _ref7 = statusCommand.__super__.constructor.apply(this, arguments);
-      return _ref7;
+      return _ref12;
     }
 
     statusCommand.prototype.init = function() {
-      this.command = '!status';
+      this.command = '/status';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1045,22 +1037,22 @@
     __extends(dieCommand, _super);
 
     function dieCommand() {
-      _ref14 = dieCommand.__super__.constructor.apply(this, arguments);
+      _ref8 = dieCommand.__super__.constructor.apply(this, arguments);
       return _ref14;
     }
 
     dieCommand.prototype.init = function() {
-      this.command = '!desligar';
+      this.command = '/die';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'cohost';
+      return this.rankPrivelege = 'mod';
     };
 
     dieCommand.prototype.functionality = function() {
-      API.sendChat('Como tu é louco, cara.');
+      API.sendChat("What are you doing!");
       undoHooks();
-      API.sendChat('Por que fez isso? Que loucura.');
+      API.sendChat("pls stahp");
       data.implode();
-      return API.sendChat('Agora o chat bot está desligado');
+      return API.sendChat("I thought we were friends x_x");
     };
 
     return dieCommand;
@@ -1071,19 +1063,20 @@
     __extends(reloadCommand, _super);
 
     function reloadCommand() {
-      _ref15 = reloadCommand.__super__.constructor.apply(this, arguments);
+      _ref9 = reloadCommand.__super__.constructor.apply(this, arguments);
       return _ref15;
     }
 
     reloadCommand.prototype.init = function() {
       this.command = '!reload';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'cohost';
+      return this.rankPrivelege = 'manager';
     };
 
     reloadCommand.prototype.functionality = function() {
       var pupSrc;
-      API.sendChat('NoNameBot Reiniciado!');
+
+      API.sendChat('ChatBot Reloaded');
       undoHooks();
       pupSrc = data.pupScriptUrl;
       data.implode();
@@ -1103,7 +1096,7 @@
     }
 
     lockCommand.prototype.init = function() {
-      this.command = '!trava';
+      this.command = '!lock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1125,7 +1118,7 @@
     }
 
     unlockCommand.prototype.init = function() {
-      this.command = '!destrava';
+      this.command = '!unlock';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1514,11 +1507,24 @@
     skipCommand.prototype.init = function() {
       this.command = '!skip';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'bouncer';
+      this.rankPrivelege = 'bouncer';
+      return window.lastSkipTime;
     };
 
     skipCommand.prototype.functionality = function() {
-      return API.moderateForceSkip();
+      var currentTime, millisecondsPassed;
+
+      currentTime = new Date();
+      if (!window.lastSkipTime) {
+        API.moderateForceSkip();
+        return window.lastSkipTime = currentTime;
+      } else {
+        millisecondsPassed = Math.round(currentTime.getTime() - window.lastSkipTime.getTime());
+        if (millisecondsPassed > 10000) {
+          window.lastSkipTime = currentTime;
+          return API.moderateForceSkip();
+        }
+      }
     };
 
     return skipCommand;
@@ -1609,24 +1615,25 @@
     }
 
     disconnectLookupCommand.prototype.init = function() {
-      this.command = '|dclookup';
+      this.command = '!dclookup';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
 
     disconnectLookupCommand.prototype.functionality = function() {
-      var cmd, dcHour, dcLookupId, dcMeridian, dcMins, dcSongsAgo, dcTimeStr, dcUser, disconnectInstances, givenName, id, recentDisconnect, resp, u, _i, _len, _ref29, _ref30;
+      var cmd, dcHour, dcLookupId, dcMeridian, dcMins, dcSongsAgo, dcTimeStr, dcUser, disconnectInstances, givenName, id, recentDisconnect, resp, u, _i, _len, _ref16, _ref17;
+
       cmd = this.msgData.message;
       if (cmd.length > 11) {
         givenName = cmd.slice(11);
-        _ref29 = data.users;
+        _ref16 = data.users;
         for (id in _ref29) {
           u = _ref29[id];
           if (u.getUser().username === givenName) {
             dcLookupId = id;
             disconnectInstances = [];
-            _ref30 = data.userDisconnectLog;
-            for (_i = 0, _len = _ref30.length; _i < _len; _i++) {
+            _ref17 = data.userDisconnectLog;
+            for (_i = 0, _len = _ref17.length; _i < _len; _i++) {
               dcUser = _ref30[_i];
               if (dcUser.id === dcLookupId) {
                 disconnectInstances.push(dcUser);
@@ -1637,7 +1644,7 @@
               if (disconnectInstances.length === 1) {
                 resp += '. ';
               } else {
-                resp += 'es. ';
+                resp += 's. ';
               }
               recentDisconnect = disconnectInstances.pop();
               dcHour = recentDisconnect.time.getHours();
@@ -1652,21 +1659,21 @@
               if (recentDisconnect.waitlistPosition !== void 0) {
                 resp += 'They were ' + recentDisconnect.waitlistPosition + ' song';
                 if (recentDisconnect.waitlistPosition > 1) {
-                  resp += '';
+                  resp += 's';
                 }
                 resp += ' away from the DJ booth.';
               } else {
-                resp += ' They were not on the waitlist.';
+                resp += 'They were not on the waitlist.';
               }
               API.sendChat(resp);
               return;
             } else {
-              API.sendChat("" + u.getUser().username + " não desconectou.");
+              API.sendChat("I haven't seen " + u.getUser().username + " disconnect.");
               return;
             }
           }
         }
-        return API.sendChat("'I haven't seen " + u.getUser().username + " disconnect.'.");
+        return API.sendChat("There is no user in the room by the ID of '" + givenName + "'.");
       }
     };
 
@@ -1690,6 +1697,7 @@
 
     voteRatioCommand.prototype.functionality = function() {
       var msg, name, r, u, votes;
+
       r = new RoomHelper();
       msg = this.msgData.message;
       if (msg.length > 12) {
@@ -1697,25 +1705,25 @@
         u = r.lookupUser(name);
         if (u !== false) {
           votes = r.userVoteRatio(u);
-          msg = u.username + " :+1: " + votes['woot'].toString() + " vezes";
+          msg = u.username + " has wooted " + votes['woot'].toString() + " time";
           if (votes['woot'] === 1) {
             msg += ', ';
           } else {
-            msg += ', ';
+            msg += 's, ';
           }
-          msg += "e :-1: " + votes['meh'].toString() + " vezes";
+          msg += "and meh'd " + votes['meh'].toString() + " time";
           if (votes['meh'] === 1) {
             msg += '. ';
           } else {
-            msg += '. ';
+            msg += 's. ';
           }
-          msg += "O seu voteratio é: " + votes['positiveRatio'].toString() + ".";
+          msg += "Their woot:vote ratio is " + votes['positiveRatio'].toString() + ".";
           return API.sendChat(msg);
         } else {
-          return API.sendChat(There Does not seem to be anyone by the name of" + name + "'");
+          return API.sendChat("There Does not seem to be anyone by the name of" + name + "'");
         }
       } else {
-        return API.sendChat("Do it right, newbie!");
+        return API.sendChat("Do you want something? Or are you just trying to annoy me");
       }
     };
 
@@ -1734,14 +1742,15 @@
     avgVoteRatioCommand.prototype.init = function() {
       this.command = '!avgvoteratio';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'mod';
+      return this.rankPrivelege = 'bouncer';
     };
 
     avgVoteRatioCommand.prototype.functionality = function() {
-      var averageRatio, msg, r, ratio, roomRatios, uid, user, userRatio, votes, _i, _len, _ref31;
+      var averageRatio, msg, r, ratio, roomRatios, uid, user, userRatio, votes, _i, _len, _ref18;
+
       roomRatios = [];
       r = new RoomHelper();
-      _ref31 = data.voteLog;
+      _ref18 = data.voteLog;
       for (uid in _ref31) {
         votes = _ref31[uid];
         user = data.users[uid].getUser();
@@ -1754,7 +1763,7 @@
         averageRatio += ratio;
       }
       averageRatio = averageRatio / roomRatios.length;
-      msg = "Contabilidade de " + roomRatios.length.toString() + " votos por usuário, e a taxa média da sala é de " + averageRatio.toFixed(2).toString() + " votos.";
+      msg = "Accounting for " + roomRatios.length.toString() + " user ratios, the average room ratio is " + averageRatio.toFixed(2).toString() + ".";
       return API.sendChat(msg);
     };
 
