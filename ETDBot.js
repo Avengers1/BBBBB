@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/ETDBot';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/ETDBot.js'
 
     settings.prototype.afkTime = 30 * 60 * 1000;
 
