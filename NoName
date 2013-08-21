@@ -349,7 +349,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("/me: EDT versão cafeina 100%. ON!");
+    return API.sendChat("/me: NoName versão Cafeina 100%. ON!");
   };
 
   populateUserData = function() {
