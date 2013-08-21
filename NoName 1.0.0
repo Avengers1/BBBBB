@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/superimpega/TastybotTest/master/TB.js';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName%201.0.0';
 
     settings.prototype.afkTime = 60 * 60 * 1000;
 
