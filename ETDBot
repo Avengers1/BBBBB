@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName.js';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/ETDBot';
 
     settings.prototype.afkTime = 30 * 60 * 1000;
 
@@ -346,7 +346,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("/me: NoName versão Cafeina 100%. ON!");
+    return API.sendChat("/me: NoNameBot 1.0.0 ON!");
   };
 
   populateUserData = function() {
