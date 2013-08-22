@@ -989,7 +989,7 @@
     };
 
     statusCommand.prototype.functionality = function() {
-      var day, hour, launch, lt, meridian, min, month, msg, t, totals;
+      var day, hour, launch, lt, meridian, min, month, msg, t.woots, totals, t.mehs, t.curates;
 
       lt = data.launchTime;
       month = lt.getMonth() + 1;
@@ -1000,8 +1000,8 @@
       min = min < 10 ? '0' + min : min;
       t = data.totalVotingData;
       t['songs'] = data.songCount;
-      launch = 'Initiated ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
-      totals = '' + t.songs + ' songs have been played, accumulating ' + ' woots, ' + ' mehs, and ' + ' queues.';
+      launch = 'Started ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
+      totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + t.curates + ' queues.';
       msg = launch + totals;
       return API.sendChat(msg);
     };
