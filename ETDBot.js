@@ -1001,7 +1001,7 @@
       t = data.totalVotingData;
       t['songs'] = data.songCount;
       launch = 'Initiated ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
-      totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + t.curates + ' queues.';
+      totals = '' + t.songs + ' songs have been played, accumulating ' + ' woots, ' + ' mehs, and ' + ' queues.';
       msg = launch + totals;
       return API.sendChat(msg);
     };
