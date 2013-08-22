@@ -983,7 +983,7 @@
     }
 
     statusCommand.prototype.init = function() {
-      this.command = '/status';
+      this.command = '!status';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
