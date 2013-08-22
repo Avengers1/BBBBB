@@ -989,7 +989,7 @@
     };
 
     statusCommand.prototype.functionality = function() {
-      var day, hour, launch, lt, meridian, min, month, msg, t.woots, totals, t.mehs, t.curates;
+      var day, hour, launch, lt, meridian, min, month, msg, t, totals;
 
       lt = data.launchTime;
       month = lt.getMonth() + 1;
