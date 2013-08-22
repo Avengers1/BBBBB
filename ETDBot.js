@@ -70,7 +70,7 @@
         interval: 5,
         offset: 0,
         msg: "/em: Make sure that you're voting or you will be removed from the wait list and from the DJ Booth."
-      },{
+      }
 
     ];
 
