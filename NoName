@@ -27,7 +27,7 @@
 
     settings.prototype.host = [];
 
-    settings.prototype.hasWarned = false;
+    settings.prototype.hasWarned = true;
 
     settings.prototype.currentwoots = [];
 
@@ -45,7 +45,7 @@
 
     settings.prototype.seshOn = false;
 
-    settings.prototype.forceSkip = false;
+    settings.prototype.forceSkip = true;
 
     settings.prototype.seshMembers = [];
 
@@ -902,42 +902,44 @@
   })(Command);
 
   afksCommand = (function(_super) {
-    __extends(afksCommand, _super);
+  __extends(afksCommand, _super);
 
-    function afksCommand() {
-      _ref10 = afksCommand.__super__.constructor.apply(this, arguments);
-      return _ref10;
-    }
+  function afksCommand() {
+    _ref10 = afksCommand.__super__.constructor.apply(this, arguments);
+    return _ref10;
+  }
 
-    afksCommand.prototype.init = function() {
-      this.command = '!afks';
-      this.parseType = 'exact';
-      return this.rankPrivelege = 'bouncer';
-    };
+  afksCommand.prototype.init = function() {
+    this.command = '!afks';
+    this.parseType = 'exact';
+    return this.rankPrivelege = 'user';
+  };
 
-    afksCommand.prototype.functionality = function() {
-      var dj, djAfk, djs, msg, now, _i, _len;
-      msg = '';
-      djs = API.getDJs();
-      for (_i = 0, _len = djs.length; _i < _len; _i++) {
-        dj = djs[_i];
-        now = new Date();
-        djAfk = now.getTime() - data.users[dj.id].getLastActivity().getTime();
-        if (djAfk > (10 * 60 * 1000)) {
-          if (msToStr(djAfk) !== false) {
-            msg += dj.username + ' - ' + msToStr(djAfk);
-            msg += '. ';
-          }
+  afksCommand.prototype.functionality = function() {
+    var dj, djAfk, djs, msg, now, _i, _len;
+    msg = '';
+    djs = API.getDJs();
+    for (_i = 0, _len = djs.length; _i < _len; _i++) {
+      dj = djs[_i];
+      now = new Date();
+      djAfk = now.getTime() - data.users[dj.id].getLastActivity().getTime();
+      if (djAfk > (5 * 60 * 1000)) {
+        if (msToStr(djAfk) !== false) {
+          msg += dj.username + ' - ' + msToStr(djAfk);
+          msg += '. ';
         }
       }
-      if (msg === '') {
-        return API.sendChat("Ninguém está AFK");
-      } else {
-        return API.sendChat('AFKs: ' + msg);
-      }
-    };
+    }
+    if (msg === '') {
+      return API.sendChat("Ninguem está AFK");
+    } else {
+      return API.sendChat('AFKs: ' + msg);
+    }
+  };
 
-    return afksCommand;
+  return afksCommand;
+
+})(Command);
 
   })(Command);
 
@@ -992,7 +994,7 @@
   statusCommand.prototype.init = function() {
     this.command = '!status';
     this.parseType = 'exact';
-    return this.rankPrivelege = 'user';
+    return this.rankPrivelege = 'bouncer';
   };
 
   statusCommand.prototype.functionality = function() {
@@ -1007,7 +1009,7 @@
     t = data.totalVotingData;
     t['songs'] = data.songCount;
     launch = 'Initiated ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
-    totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + t.curates + ' queues.';
+    totals = '' + t.songs + ' songs have been played, accumulating ' + ' t.woots + ' woots ' + ' t.mehs + ' mehs and ' + ' t.curates + ' queues.';
     msg = launch + totals;
     return API.sendChat(msg);
   };
