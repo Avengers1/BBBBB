@@ -52,9 +52,9 @@
     settings.prototype.launchTime = null;
 
     settings.prototype.totalVotingData = {
-      woots: 0,
-      mehs: 0,
-      curates: 0
+      woots: [],
+      mehs: [],
+      curates: [],
     };
 
     settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName';
@@ -73,7 +73,7 @@
       },{
         interval: 9,
         offset: 0,
-        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: Ainda não existe grupo"
+        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: https://www.facebook.com/groups/62210101780223/ "
       }
     ];
 
