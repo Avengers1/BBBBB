@@ -27,13 +27,13 @@
 
     settings.prototype.host = [];
 
-    settings.prototype.hasWarned = true;
+    settings.prototype.hasWarned = false;
 
-    settings.prototype.currentwoots = [];
+    settings.prototype.currentwoots = 0;
 
-    settings.prototype.currentmehs = [];
+    settings.prototype.currentmehs = 0;
 
-    settings.prototype.currentcurates = [];
+    settings.prototype.currentcurates = 0;
 
     settings.prototype.roomUrlPath = null;
 
@@ -45,7 +45,7 @@
 
     settings.prototype.seshOn = false;
 
-    settings.prototype.forceSkip = true;
+    settings.prototype.forceSkip = false;
 
     settings.prototype.seshMembers = [];
 
@@ -54,7 +54,7 @@
     settings.prototype.totalVotingData = {
       woots: 0,
       mehs: 0,
-      curates: 0,
+      curates: 0
     };
 
     settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName';
@@ -73,7 +73,7 @@
       },{
         interval: 9,
         offset: 0,
-        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: https://www.facebook.com/groups/62210101780223/ "
+        msg: "/em: Entre no nosso grupo do facebook e fique por dentro de todas as nossas atualizações: https://www.facebook.com/groups/622101017802230/ "
       }
     ];
 
@@ -349,7 +349,7 @@
   })();
 
   pupOnline = function() {
-    return API.sendChat("/me: NoName versão 1.0.1 ON!");
+    return API.sendChat("/me: NoNameBot 1.0.0 ON!");
   };
 
   populateUserData = function() {
@@ -500,7 +500,7 @@
       var user;
       user = data.users[this.msgData.fromID].getUser();
       switch (this.rankPrivelege) {
-        case 'host':
+         case 'host':
           return user.permission === 5;
         case 'cohost':
           return user.permission >= 4;
@@ -660,15 +660,15 @@
       } else {
         selections['artist'] = chooseRandom(arts);
       }
-     msg = "Todo mundo já ouviu aquela musica do " + selections['artist'] + " obtenha novas musicas em http://youtube.com/" + selections['channels'][0] + " http://youtube.com/" + selections['channels'][1] + " ou http://youtube.com/" + selections['channels'][2];
+      msg = "Everyone's heard that " + selections['artist'] + " track! Get new music from http://youtube.com/" + selections['channels'][0] + " http://youtube.com/" + selections['channels'][1] + " or http://youtube.com/" + selections['channels'][2];
       return API.sendChat(msg);
     };
 
-    newSongsCommand.prototype.memberChannels = ["JitterStep", "MistaDubstep", "DubStationPromotions", "UndergroundDubstep",, "DarkstepWarrior", "BombshockDubstep", "Sharestep"];
+    newSongsCommand.prototype.memberChannels = ["MistaDubstep", "DubStationPromotions", "UndergroundDubstep", "JesusDied4Dubstep", "DarkstepWarrior", "BombshockDubstep", "Sharestep"];
 
-    newSongsCommand.prototype.channels = ["UltraRecords", "kontor", "SpinninRec", "PandoraMuslc", "ITacMusic", "Liquicity", "FunkyyPanda", "BassRape", "WobbleCraftDubz", "UKFdubstep", "DropThatBassline", "VitalDubstep", "AirwaveDubstepTV", "EpicNetworkMusic", "NoOffenseDubstep", "InspectorDubplate", "ReptileDubstep", "MrMoMDubstep", "FrixionNetwork", "IcyDubstep", "DubstepWeed", "VhileMusic", "LessThan3Dubstep", "PleaseMindTheDUBstep", "ClownDubstep", "TheULTRADUBSTEP", "DuBM0nkeyz", "DubNationUK", "TehDubstepChannel", "BassDropMedia", "USdubstep", "UNITEDubstep"];
+    newSongsCommand.prototype.channels = ["BassRape", "MonstercatMedia", "UKFdubstep", "DropThatBassline", "VitalDubstep", "AirwaveDubstepTV", "InspectorDubplate", "TehDubstepChannel", "UNITEDubstep", "LuminantNetwork", "TheSoundIsle", "PandoraMuslc", "MrSuicideSheep", "HearTheSensation", "bassoutletpromos", "MistaDubstep", "DubStationPromotions", "UndergroundDubstep", "JesusDied4Dubstep", "DarkstepWarrior", "BombshockDubstep", "Sharestep"];
 
-    newSongsCommand.prototype.artists = ["Skrillex", "Doctor P", "Excision", "Flux Pavilion", "Knife Party", "Krewella", "Rusko", "Bassnectar", "Nero", "Deadmau5", "Borgore", "Zomboy"];
+    newSongsCommand.prototype.artists = ["Doctor P", "Excision", "Flux Pavilion", "Knife Party", "Rusko", "Bassnectar", "Nero", "Deadmau5", "Borgore", "Zomboy"];
 
     return newSongsCommand;
 
@@ -683,7 +683,7 @@
     }
 
     whyWootCommand.prototype.init = function() {
-      this.command = '!WICKED';
+      this.command = '!NONAME';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'featured';
     };
@@ -773,7 +773,7 @@
     __extends(roomHelpCommand, _super);
 
     function roomHelpCommand() {
-      _ref5 = roomHelpCommand.__super__.constructor.apply(this, arguments);
+      _ref4 = roomHelpCommand.__super__.constructor.apply(this, arguments);
       return _ref5;
     }
 
@@ -785,6 +785,7 @@
 
     roomHelpCommand.prototype.functionality = function() {
       var msg1, msg2;
+
       msg1 = "Bem vindo a sala Frases da Kéfera-2! Ser DJ: Crie uma lista de reprodução e coloque Musica do Youtube ou soundcloud. ";
       msg1 += "Se é novo procure pelo seu nome na sua tela (próximo a cabine do DJ) e depois mude o nome. ";
       msg1 += "Para Ganhar Pontos clique em Bacana. ";
@@ -815,7 +816,7 @@
 
     sourceCommand.prototype.functionality = function() {
       var msg;
-      msg = ' BOT criado por Backus e editado por NoName para a sala Frases da Kéfera ';
+      msg = ' BOT criado por Backus e editado por NoName para a sala Frases da Kéfera-2 ';
       return API.sendChat(msg);
     };
 
@@ -884,16 +885,15 @@
     }
 
     downloadCommand.prototype.init = function() {
-      this.command = '!edt';
+      this.command = '!fdk';
       this.parseType = 'exact';
       return this.rankPrivelege = 'featured';
     };
 
     downloadCommand.prototype.functionality = function() {
       var msg;
-      msg = "  Participe do grupo e curta nossa pagina ";
-      msg += "https://www.facebook.com/groups/EDTplugdj/ ";
-      msg += "https://www.facebook.com/EDTentertainment ";
+      msg = " Participe do grupo ";
+      msg += " https://www.facebook.com/groups/622101017802230/ ";
       return API.sendChat(msg);
     };
 
@@ -902,44 +902,43 @@
   })(Command);
 
   afksCommand = (function(_super) {
-  __extends(afksCommand, _super);
+    __extends(afksCommand, _super);
 
-  function afksCommand() {
-    _ref10 = afksCommand.__super__.constructor.apply(this, arguments);
-    return _ref10;
-  }
+    function afksCommand() {
+      _ref5 = afksCommand.__super__.constructor.apply(this, arguments);
+      return _ref10;
+    }
 
-  afksCommand.prototype.init = function() {
-    this.command = '!afks';
-    this.parseType = 'exact';
-    return this.rankPrivelege = 'user';
-  };
+    afksCommand.prototype.init = function() {
+      this.command = '!afks';
+      this.parseType = 'exact';
+      return this.rankPrivelege = 'mod';
+    };
 
-  afksCommand.prototype.functionality = function() {
-    var dj, djAfk, djs, msg, now, _i, _len;
-    msg = '';
-    djs = API.getDJs();
-    for (_i = 0, _len = djs.length; _i < _len; _i++) {
-      dj = djs[_i];
-      now = new Date();
-      djAfk = now.getTime() - data.users[dj.id].getLastActivity().getTime();
-      if (djAfk > (5 * 60 * 1000)) {
-        if (msToStr(djAfk) !== false) {
-          msg += dj.username + ' - ' + msToStr(djAfk);
-          msg += '. ';
+    afksCommand.prototype.functionality = function() {
+      var dj, djAfk, djs, msg, now, _i, _len;
+
+      msg = '';
+      djs = API.getDJs();
+      for (_i = 0, _len = djs.length; _i < _len; _i++) {
+        dj = djs[_i];
+        now = new Date();
+        djAfk = now.getTime() - data.users[dj.id].getLastActivity().getTime();
+        if (djAfk > (5 * 60 * 1000)) {
+          if (msToStr(djAfk) !== false) {
+            msg += dj.username + ' - ' + msToStr(djAfk);
+            msg += '. ';
+          }
         }
       }
-    }
-    if (msg === '') {
-      return API.sendChat("Ninguem está AFK");
-    } else {
-      return API.sendChat('AFKs: ' + msg);
-    }
-  };
+      if (msg === '') {
+        return API.sendChat("Ninguem está AFK!");
+      } else {
+        return API.sendChat('AFKs: ' + msg);
+      }
+    };
 
-  return afksCommand;
-
-})(Command);
+    return afksCommand;
 
   })(Command);
 
@@ -947,25 +946,26 @@
     __extends(allAfksCommand, _super);
 
     function allAfksCommand() {
-      _ref11 = allAfksCommand.__super__.constructor.apply(this, arguments);
+      _ref6 = allAfksCommand.__super__.constructor.apply(this, arguments);
       return _ref11;
     }
 
     allAfksCommand.prototype.init = function() {
       this.command = '!allafks';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'manager';
+      return this.rankPrivelege = 'mod';
     };
 
     allAfksCommand.prototype.functionality = function() {
       var msg, now, u, uAfk, usrs, _i, _len;
+
       msg = '';
       usrs = API.getUsers();
       for (_i = 0, _len = usrs.length; _i < _len; _i++) {
         u = usrs[_i];
         now = new Date();
         uAfk = now.getTime() - data.users[u.id].getLastActivity().getTime();
-        if (uAfk > (30 * 60 * 1000)) {
+        if (uAfk > (10 * 60 * 1000)) {
           if (msToStr(uAfk) !== false) {
             msg += u.username + ' - ' + msToStr(uAfk);
             msg += '. ';
@@ -973,7 +973,7 @@
         }
       }
       if (msg === '') {
-        return API.sendChat("Ninguém está AFK");
+        return API.sendChat("Nobody appears to be AFK!");
       } else {
         return API.sendChat('AFKs: ' + msg);
       }
@@ -984,39 +984,41 @@
   })(Command);
 
   statusCommand = (function(_super) {
-  __extends(statusCommand, _super);
+    __extends(statusCommand, _super);
 
-  function statusCommand() {
-    _ref12 = statusCommand.__super__.constructor.apply(this, arguments);
-    return _ref12;
-  }
+    function statusCommand() {
+      _ref7 = statusCommand.__super__.constructor.apply(this, arguments);
+      return _ref12;
+    }
 
-  statusCommand.prototype.init = function() {
-    this.command = '!status';
-    this.parseType = 'exact';
-    return this.rankPrivelege = 'user';
-  };
+    statusCommand.prototype.init = function() {
+      this.command = '!status';
+      this.parseType = 'exact';
+      return this.rankPrivelege = 'bouncer';
+    };
 
-  statusCommand.prototype.functionality = function() {
-    var day, hour, launch, lt, meridian, min, month, msg, t, totals;
-    lt = data.launchTime;
-    month = lt.getMonth() + 1;
-    day = lt.getDate();
-    hour = lt.getHours();
-    meridian = hour % 12 === hour ? 'AM' : 'PM';
-    min = lt.getMinutes();
-    min = min < 10 ? '0' + min : min;
-    t = data.totalVotingData;
-    t['songs'] = data.songCount;
-    launch = 'Initiated ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
-    totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + t.curates + ' queues.';
-    msg = launch + totals;
-    return API.sendChat(msg);
-  };
+    statusCommand.prototype.functionality = function() {
+      var day, hour, launch, lt, meridian, min, month, msg, t, totals;
 
-  return statusCommand;
+      lt = data.launchTime;
+      month = lt.getMonth() + 1;
+      day = lt.getDate();
+      hour = lt.getHours();
+      meridian = hour % 12 === hour ? 'AM' : 'PM';
+      min = lt.getMinutes();
+      min = min < 10 ? '0' + min : min;
+      t = data.totalVotingData;
+      t['songs'] = data.songCount;
+      launch = 'Started ' + month + '/' + day + ' ' + hour + ':' + min + ' ' + meridian + '. ';
+      totals = '' + t.songs + ' songs have been played, accumulating ' + t.woots + ' woots, ' + t.mehs + ' mehs, and ' + t.curates + ' queues.';
+      msg = launch + totals;
+      return API.sendChat(msg);
+    };
 
-})(Command);
+    return statusCommand;
+
+
+  })(Command);
 
   unhookCommand = (function(_super) {
     __extends(unhookCommand, _super);
@@ -1045,22 +1047,22 @@
     __extends(dieCommand, _super);
 
     function dieCommand() {
-      _ref14 = dieCommand.__super__.constructor.apply(this, arguments);
+      _ref8 = dieCommand.__super__.constructor.apply(this, arguments);
       return _ref14;
     }
 
     dieCommand.prototype.init = function() {
-      this.command = '!desligar';
+      this.command = '!morra';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'cohost';
+      return this.rankPrivelege = 'mod';
     };
 
     dieCommand.prototype.functionality = function() {
-      API.sendChat('Como tu é louco, cara.');
+      API.sendChat("What are you doing!");
       undoHooks();
-      API.sendChat('Por que fez isso? Que loucura.');
+      API.sendChat("pls stahp");
       data.implode();
-      return API.sendChat('Agora o chat bot está desligado');
+      return API.sendChat("I thought we were friends x_x");
     };
 
     return dieCommand;
@@ -1071,19 +1073,20 @@
     __extends(reloadCommand, _super);
 
     function reloadCommand() {
-      _ref15 = reloadCommand.__super__.constructor.apply(this, arguments);
+      _ref9 = reloadCommand.__super__.constructor.apply(this, arguments);
       return _ref15;
     }
 
     reloadCommand.prototype.init = function() {
-      this.command = '!reload';
+      this.command = '!reiniciar';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'cohost';
+      return this.rankPrivelege = 'manager';
     };
 
     reloadCommand.prototype.functionality = function() {
       var pupSrc;
-      API.sendChat('NoNameBot Reiniciado!');
+
+      API.sendChat('ChatBot Reiniciado');
       undoHooks();
       pupSrc = data.pupScriptUrl;
       data.implode();
@@ -1147,7 +1150,7 @@
     }
 
     removeCommand.prototype.init = function() {
-      this.command = '!remove';
+      this.command = '!remover';
       this.parseType = 'startsWith';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1487,14 +1490,14 @@
     }
 
     uservoiceCommand.prototype.init = function() {
-      this.command = ['/uservoice()', '/idea()'];
+      this.command = ['!uservoice()', '!idea()'];
       this.parseType = 'exact';
       return this.rankPrivelege = 'cohost';
     };
 
     uservoiceCommand.prototype.functionality = function() {
       var msg;
-      msg = 'Have an idea for the room, our bot, or an event?  Awesome! Submit it to our uservoice and we\'ll get started on it: http://is.gd/IzP4bA';
+      msg = 'Have an idea for the room, our bot, or an event?  Awesome! Submit it to our uservoice and we\'ll get started on it: ';
       msg += ' (please don\'t ask for mod)';
       return API.sendChat(msg);
     };
@@ -1512,13 +1515,26 @@
     }
 
     skipCommand.prototype.init = function() {
-      this.command = '!pula';
+      this.command = '!skip';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'bouncer';
+      this.rankPrivelege = 'bouncer';
+      return window.lastSkipTime;
     };
 
     skipCommand.prototype.functionality = function() {
-      return API.moderateForceSkip();
+      var currentTime, millisecondsPassed;
+
+      currentTime = new Date();
+      if (!window.lastSkipTime) {
+        API.moderateForceSkip();
+        return window.lastSkipTime = currentTime;
+      } else {
+        millisecondsPassed = Math.round(currentTime.getTime() - window.lastSkipTime.getTime());
+        if (millisecondsPassed > 10000) {
+          window.lastSkipTime = currentTime;
+          return API.moderateForceSkip();
+        }
+      }
     };
 
     return skipCommand;
@@ -1559,7 +1575,7 @@
     }
 
     commandsCommand.prototype.init = function() {
-      this.command = '!commands';
+      this.command = '!comandos';
       this.parseType = 'exact';
       return this.rankPrivelege = 'bouncer';
     };
@@ -1615,18 +1631,19 @@
     };
 
     disconnectLookupCommand.prototype.functionality = function() {
-      var cmd, dcHour, dcLookupId, dcMeridian, dcMins, dcSongsAgo, dcTimeStr, dcUser, disconnectInstances, givenName, id, recentDisconnect, resp, u, _i, _len, _ref29, _ref30;
+      var cmd, dcHour, dcLookupId, dcMeridian, dcMins, dcSongsAgo, dcTimeStr, dcUser, disconnectInstances, givenName, id, recentDisconnect, resp, u, _i, _len, _ref16, _ref17;
+
       cmd = this.msgData.message;
       if (cmd.length > 11) {
         givenName = cmd.slice(11);
-        _ref29 = data.users;
+        _ref16 = data.users;
         for (id in _ref29) {
           u = _ref29[id];
           if (u.getUser().username === givenName) {
             dcLookupId = id;
             disconnectInstances = [];
-            _ref30 = data.userDisconnectLog;
-            for (_i = 0, _len = _ref30.length; _i < _len; _i++) {
+            _ref17 = data.userDisconnectLog;
+            for (_i = 0, _len = _ref17.length; _i < _len; _i++) {
               dcUser = _ref30[_i];
               if (dcUser.id === dcLookupId) {
                 disconnectInstances.push(dcUser);
@@ -1652,7 +1669,7 @@
               if (recentDisconnect.waitlistPosition !== void 0) {
                 resp += 'Ele estava ' + recentDisconnect.waitlistPosition + ' músicas';
                 if (recentDisconnect.waitlistPosition > 1) {
-                  resp += '';
+                  resp += 's';
                 }
                 resp += ' antes da cabine de DJ.';
               } else {
@@ -1690,6 +1707,7 @@
 
     voteRatioCommand.prototype.functionality = function() {
       var msg, name, r, u, votes;
+
       r = new RoomHelper();
       msg = this.msgData.message;
       if (msg.length > 12) {
@@ -1701,13 +1719,13 @@
           if (votes['woot'] === 1) {
             msg += ', ';
           } else {
-            msg += ', ';
+            msg += 's, ';
           }
           msg += "e :-1: " + votes['meh'].toString() + " vezes";
           if (votes['meh'] === 1) {
             msg += '. ';
           } else {
-            msg += '. ';
+            msg += 's. ';
           }
           msg += "O seu voteratio é: " + votes['positiveRatio'].toString() + ".";
           return API.sendChat(msg);
@@ -1734,14 +1752,15 @@
     avgVoteRatioCommand.prototype.init = function() {
       this.command = '!avgvoteratio';
       this.parseType = 'exact';
-      return this.rankPrivelege = 'mod';
+      return this.rankPrivelege = 'bouncer';
     };
 
     avgVoteRatioCommand.prototype.functionality = function() {
-      var averageRatio, msg, r, ratio, roomRatios, uid, user, userRatio, votes, _i, _len, _ref31;
+      var averageRatio, msg, r, ratio, roomRatios, uid, user, userRatio, votes, _i, _len, _ref18;
+
       roomRatios = [];
       r = new RoomHelper();
-      _ref31 = data.voteLog;
+      _ref18 = data.voteLog;
       for (uid in _ref31) {
         votes = _ref31[uid];
         user = data.users[uid].getUser();
@@ -1865,7 +1884,7 @@
     var msg;
 
     msg = chat.message.toLowerCase();
-    if (msg.indexOf('¨¨¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1 || msg.indexOf('¨¨¨¨¨¨') !== -1 || msg.indexOf(':trollface:') !== -1 || msg.indexOf('autowoot:') !== -1) {
+    if (msg.indexOf('fan me') !== -1 || msg.indexOf(':trollface:') !== -1 || msg.indexOf('fan pls') !== -1 || msg.indexOf('fan4fan') !== -1 || msg.indexOf('add me to fan') !== -1 || msg.indexOf('autowoot:') !== -1) {
       return API.moderateDeleteChat(chat.chatID);
     }
   };
