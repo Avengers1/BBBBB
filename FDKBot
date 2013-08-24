@@ -57,7 +57,7 @@
       curates: 0
     };
 
-    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/NoName';
+    settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/FDKBot';
 
     settings.prototype.afkTime = 30 * 60 * 1000;
 
