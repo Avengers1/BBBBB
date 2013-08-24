@@ -45,7 +45,7 @@
 
     settings.prototype.seshOn = false;
 
-    settings.prototype.forceSkip = false;
+    settings.prototype.forceSkip = true;
 
     settings.prototype.seshMembers = [];
 
