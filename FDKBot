@@ -1806,13 +1806,13 @@
   };
 
   announceCurate = function(obj) {
-    return announceCurate;
+    return API.sendChat("/em: " + obj.user.username + " adicionou esta musica!");
   };
 
   handleUserJoin = function(user) {
     data.userJoin(user);
     data.users[user.id].updateActivity();
-    return handleUserJoin;
+    return API.sendChat("/em: " + user.username + " entrou na sala!");
   };
 
   handleNewSong = function(obj) {
@@ -1821,6 +1821,7 @@
     if (data.currentsong === null) {
       data.newSong();
     } else {
+      API.sendChat("/em: Just played " + data.currentsong.title + " by " + data.currentsong.author + ". Stats: Woots: " + data.currentwoots + ", Mehs: " + data.currentmehs + ", Loves: " + data.currentcurates + ".");
       data.newSong();
       document.getElementById("button-vote-positive").click();
     }
