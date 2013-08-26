@@ -1843,7 +1843,7 @@
   };
 
   handleUserLeave = function(user) {
-    var disconnectStats, i, u, _i, _len, _ref31;
+    var disconnectStats, i, u, _i, _len, _ref28;
     disconnectStats = {
       id: user.id,
       time: new Date(),
