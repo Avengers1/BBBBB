@@ -29,11 +29,11 @@
 
     settings.prototype.hasWarned = false;
 
-    settings.prototype.currentwoots = 0;
+    settings.prototype.currentwoots = [];
 
-    settings.prototype.currentmehs = 0;
+    settings.prototype.currentmehs = [];
 
-    settings.prototype.currentcurates = 0;
+    settings.prototype.currentcurates = [];
 
     settings.prototype.roomUrlPath = null;
 
@@ -51,10 +51,10 @@
 
     settings.prototype.launchTime = null;
 
-    settings.prototype.totalVotingData = true
+    settings.prototype.totalVotingData = {
       woots: 0,
       mehs: 0,
-      curates: 0,
+      curates: 0
     };
 
     settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/FDKBot';
