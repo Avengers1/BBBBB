@@ -51,10 +51,10 @@
 
     settings.prototype.launchTime = null;
 
-    settings.prototype.totalVotingData = {
-      woots: {,
-      mehs: {,
-      curates: {,
+    settings.prototype.totalVotingData = true
+      woots: [],
+      mehs: [],
+      curates: [],
     };
 
     settings.prototype.pupScriptUrl = 'https://raw.github.com/SrNoName/BBBBB/master/FDKBot';
