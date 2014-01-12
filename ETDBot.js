@@ -1043,7 +1043,7 @@
     }
 
     dieCommand.prototype.init = function() {
-      this.command = '/die';
+      this.command = '!die';
       this.parseType = 'exact';
       return this.rankPrivelege = 'mod';
     };
