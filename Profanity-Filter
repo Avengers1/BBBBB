@@ -3,7 +3,7 @@ if (autoModerator !== undefined)
 
 String.prototype.equalsIgnoreCase     = function(other)    { return typeof other !== 'string' ? false : this.toLowerCase() === other.toLowerCase(); };
   version: "1.0.3",
-	bannedWords:
+	bannedWords: [
 		'fan me',
 		'is now your fan',
 		'fan y fan',
