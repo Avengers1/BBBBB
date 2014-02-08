@@ -224,7 +224,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                          case"getid":
                         API.sendChat(data.fromID); 
-                break//GETID END
+                break
                 
                 case"swapup":
                         if(data.fromID == "5214f9e196fba51fda062ea7" || data.fromID == "524c910696fba55077fdaa12"){
