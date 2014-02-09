@@ -23,12 +23,16 @@
                     if (message.indexOf('!regras') == 0) API.sendChat('/me  :warning: 1º Não toque musicas repetidas ou pulado,2º Não fique pedindo cargos!, 3º Sem flood no chat, 4º Evite tocar musicas longas / permitido : 6:30 maximo, 5º º Não escrever /me /em (texto amarelo)
 6º Respeite os adms da sala, 7º Não toque funk !');
                     if (message.indexOf('!musica') == 0) API.sendChat('/me ' + song);
-                    if (message.indexOf('!autor','author') == 0) API.sendChat('/me por Unlock');
+                    if (message.indexOf('!autor','author') == 0) API.sendChat('/me por User-00700823');
                     if (message.indexOf('!ajuda','help') == 0) API.sendChat('/me  :warning:  Todas as informações podem ser encontradas aqui http://www.treta.com.br/treta-com-br-no-plug-dj');
                     if (message.indexOf('!etd') == 0) API.sendChat('/me Grupo: https://www.facebook.com/groups/ETD.plug/, Twitter: https://twitter.com/ETDBR,Página: https://www.facebook.com/ETDPlugdj');
-                    if (message.indexOf('!pita') == 0) API.sendChat('/me :trollface: se pita?');
+                    if (message.indexOf('!pita') == 0) API.sendChat('/me :trollface: se pita? ( ͡° ͜ʖ ͡°)');
                     if (message.indexOf('!User007') == 0) API.sendChat('/me menino mais seqsy do plug.dj!');
                     if (message.indexOf('!welcome') == 0) API.sendChat('/me Bem vindos a sala Eletro Trap & Dubstep!');
+                    if (message.indexOf('!brutos') == 0) API.sendChat('/me PC com AIDS!');
+                    if (message.indexOf('!assis') == 0) API.sendChat('/me noia!');
+                    if (message.indexOf('!ipasoca') == 0) API.sendChat('/me Dorgado!');
+                    if (message.indexOf('!guilherme') == 0) API.sendChat('/me verme!');
                     if (API.hasPermission(data.fromID,API.ROLE.BOUNCER)) {
                         if (message.indexOf('!stop') == 0) {
                             API.sendChat('ETD-Bot Desligado');
