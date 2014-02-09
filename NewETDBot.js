@@ -75,7 +75,7 @@ function onChat(data) {
                 }
                 if (message.indexOf('!comandos') == 0) API.sendChat('/me  :pushpin:  !temas !regras !musica !ajuda !etd');
                 if (message.indexOf('!temas') == 0) API.sendChat('/me :warning:  Temas Livres,Dubstep, Electro, Electro-House, House, Progressive House,Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle');
-                if (message.indexOf('!regras') == 0) API.sendChat(':warning: 1- Não toque musicas repetidas ou pulado,2- Não fique pedindo cargos!, 3- Sem flood no chat, 4º Evite tocar musicas longas / permitido : 6:30 maximo, 5- Não escrever /me /em 6- Respeite os adms da sala, 7- Não toque funk !);
+                if (message.indexOf('!regras') == 0) API.sendChat(':warning: 1- Não toque musicas repetidas ou pulado,2- Não fique pedindo cargos!, 3- Sem flood no chat, 4º Evite tocar musicas longas / permitido : 6:30 maximo, 5- Não escrever /me /em 6- Respeite os adms da sala, 7- Não toque funk !');
                 if (message.indexOf('!musica') == 0) API.sendChat('/me  :pushpin:   ' + song);
                 // NÃO REMOVA O AUTOR, isso me ajuda e me motiva a fazer outros bots :)
                 if (message.indexOf('!autor') == 0) API.sendChat('/me  :bulb:  Admin-bot by User-00700823');
