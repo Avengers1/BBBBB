@@ -49,7 +49,7 @@
             if (mehs === 1) var mm = '   --    :-1: ,   '; else var mm = '   --    :-1:  ,   ';
             if (curates === 1) var cc = '   --    :star:'; else var cc = '   --    :star:';
             var scoreStr = '   recebeu    ' + woots + ww + mehs + mm + curates + cc;
-            API.sendChat('/em  :cd:    ' + songStr '    :cd:   ' + scoreStr ' ');
+            song = API.getMedia().author + '  -  ' + API.getMedia().title;
     }
      
     function djUpdate(djs) {
