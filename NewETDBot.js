@@ -17,6 +17,10 @@
                             API.moderateRoomProps(true,true);
                             setTimeout(function(){API.moderateForceSkip();},1500);
                             setTimeout(function(){API.moderateRoomProps(false,true);},4000);
+                   if (message.indexOf('!desligar') == 0) {
+                        API.sendChat('Treta-Bot Desligado');
+                        API.off(API.CHAT,onChat);
+                        API.off(API.DJ_ADVANCE,onDjAdv);
                     }
                     if (message.indexOf('!comandos') == 0) API.sendChat('/me !temas !regras !musica !ajuda !fb !gi');
                     if (message.indexOf('!temas') == 0) API.sendChat('/me :warning:  Temas Livres,Dubstep, Electro, Electro-House, House, Progressive House,Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle');
@@ -32,28 +36,23 @@
                     if (message.indexOf('!assis') == 0) API.sendChat('/me Broxa!');
                     if (message.indexOf('!ipasoca') == 0) API.sendChat('/me Dorgado!');
                     if (message.indexOf('!guilherme') == 0) API.sendChat('/me verme!');
-                    if (API.hasPermission(data.fromID,API.ROLE.BOUNCER)) {
-                        if (message.indexOf('!stop') == 0) {
-                            API.sendChat('ETD-Bot Desligado');
-                            API.off(API.CHAT,onChat);
-                            API.off(API.DJ_ADVANCE,onDjAdv);
-                        }
-                    }
+                    
     }
      
     function onDjAdv(obj) {
-            setTimeout(function(){document.getElementById("button-vote-positive").click();},1500);
-            var songStr = song;
-            var woots = obj.lastPlay.score.positive, mehs = obj.lastPlay.score.negative, curates = obj.lastPlay.score.curates ;
-            if (woots === 1) var ww = '   --    :+1:  ,   '; else var ww = '   --    :+1:  ,   ';
-            if (mehs === 1) var mm = '   --    :-1: ,   '; else var mm = '   --    :-1:  ,   ';
-            if (curates === 1) var cc = '   --    :star:'; else var cc = '   --    :star:';
-            var scoreStr = '   recebeu    ' + woots + ww + mehs + mm + curates + cc;
-            song = API.getMedia().author + '  -  ' + API.getMedia().title;
+        setTimeout(function(){document.getElementById("button-vote-positive").click();},1500);
+        var songStr = song;
+        var woots = obj.lastPlay.score.positive, mehs = obj.lastPlay.score.negative, curates = obj.lastPlay.score.curates ;
+        if (woots === 1) var ww = ' -- :+1: , '; else var ww = ' -- :+1: , ';
+        if (mehs === 1) var mm = ' -- :-1: , '; else var mm = ' -- :-1: , ';
+        if (curates === 1) var cc = ' -- :star:'; else var cc = ' -- :star:';
+        var scoreStr = ' recebeu ' + woots + ww + mehs + mm + curates + cc;
+        API.sendChat(' :clapper: ' + songStr + ' :clapper: ' + scoreStr);
+        song = API.getMedia().author + ' - ' + API.getMedia().title;
     }
      
     function djUpdate(djs) {
             song = API.getMedia().author + '  -  ' + API.getMedia().title;
-            API.on(API.DJ_UPDATE,djUpdate);
+            API.off(API.DJ_UPDATE,djUpdate);
     }
 
