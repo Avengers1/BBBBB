@@ -28,8 +28,8 @@
                     if (message.indexOf('!pita') == 0) API.sendChat('/me ce num pita não ? ki bão , mai eu pito , eu pito muito');
                     if (message.indexOf('!User007') == 0) API.sendChat('/me menino mais seqsy do plug.dj!');
                     if (message.indexOf('!welcome') == 0) API.sendChat('/me Bem vindos a sala Eletro Trap & Dubstep!');
-                    if (message.indexOf('!brutos') == 0) API.sendChat('/me PC com AIDS!');
-                    if (message.indexOf('!assis') == 0) API.sendChat('/me noia!');
+                    if (message.indexOf('!brutos') == 0) API.sendChat('/me PC com AIDS! Joga saporra fora');
+                    if (message.indexOf('!assis') == 0) API.sendChat('/me Broxa!');
                     if (message.indexOf('!ipasoca') == 0) API.sendChat('/me Dorgado!');
                     if (message.indexOf('!guilherme') == 0) API.sendChat('/me verme!');
                     if (API.hasPermission(data.fromID,API.ROLE.BOUNCER)) {
