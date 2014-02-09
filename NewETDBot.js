@@ -20,13 +20,13 @@
                     }
                     if (message.indexOf('!comandos') == 0) API.sendChat('/me !temas !regras !musica !ajuda !fb !gi');
                     if (message.indexOf('!temas') == 0) API.sendChat('/me :warning:  Temas Livres,Dubstep, Electro, Electro-House, House, Progressive House,Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle');
-                    if (message.indexOf('!regras') == 0) API.sendChat('/me  :warning: 1º Não toque musicas repetidas ou pulado,2º Não fique pedindo cargos!, 3º Sem flood no chat, 4º Evite tocar musicas longas / permitido : 6:30 maximo, 5º º Não escrever /me /em (texto amarelo)
+                    if (message.indexOf('!regras') == 0) API.sendChat('/me  :warning: 1º Não toque musicas repetidas ou pulado,2º Não fique pedindo cargos!, 3º Sem flood no chat, 4º Evite tocar musicas longas / permitido : 6:30 maximo, 5º º Não escrever /me /em
 6º Respeite os adms da sala, 7º Não toque funk !');
                     if (message.indexOf('!musica') == 0) API.sendChat('/me ' + song);
                     if (message.indexOf('!autor','author') == 0) API.sendChat('/me por User-00700823');
                     if (message.indexOf('!ajuda','help') == 0) API.sendChat('/me  :warning:  Todas as informações podem ser encontradas aqui http://www.treta.com.br/treta-com-br-no-plug-dj');
                     if (message.indexOf('!etd') == 0) API.sendChat('/me Grupo: https://www.facebook.com/groups/ETD.plug/, Twitter: https://twitter.com/ETDBR,Página: https://www.facebook.com/ETDPlugdj');
-                    if (message.indexOf('!pita') == 0) API.sendChat('/me :trollface: se pita? ( ͡° ͜ʖ ͡°)');
+                    if (message.indexOf('!pita') == 0) API.sendChat('/me :trollface: se pita?');
                     if (message.indexOf('!User007') == 0) API.sendChat('/me menino mais seqsy do plug.dj!');
                     if (message.indexOf('!welcome') == 0) API.sendChat('/me Bem vindos a sala Eletro Trap & Dubstep!');
                     if (message.indexOf('!brutos') == 0) API.sendChat('/me PC com AIDS!');
