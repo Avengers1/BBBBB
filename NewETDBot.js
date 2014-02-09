@@ -25,7 +25,7 @@
                     if (message.indexOf('!autor','author') == 0) API.sendChat('/me por User-00700823');
                     if (message.indexOf('!ajuda','help') == 0) API.sendChat('/me  :warning:  Todas as informações podem ser encontradas aqui http://www.treta.com.br/treta-com-br-no-plug-dj');
                     if (message.indexOf('!etd') == 0) API.sendChat('/me Grupo: https://www.facebook.com/groups/ETD.plug/, Twitter: https://twitter.com/ETDBR,Página: https://www.facebook.com/ETDPlugdj');
-                    if (message.indexOf('!pita') == 0) API.sendChat('/me :trollface: se pita?');
+                    if (message.indexOf('!pita') == 0) API.sendChat('/me ce num pita não ? ki bão , mai eu pito , eu pito muito');
                     if (message.indexOf('!User007') == 0) API.sendChat('/me menino mais seqsy do plug.dj!');
                     if (message.indexOf('!welcome') == 0) API.sendChat('/me Bem vindos a sala Eletro Trap & Dubstep!');
                     if (message.indexOf('!brutos') == 0) API.sendChat('/me PC com AIDS!');
