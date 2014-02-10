@@ -28,7 +28,7 @@ mubBot.filters.swearWords = new Array();
 mubBot.filters.racistWords = new Array();
 mubBot.filters.beggerWords = new Array();
 
-mubBot.settings.maxLength = 10; //minutes
+mubBot.settings.maxLength = 7; //minutes
 mubBot.settings.cooldown = 10; //seconds
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
