@@ -157,13 +157,13 @@ botMethods.djAdvanceEvent = function(data){
             if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1){
                 switch(command[0].toLowerCase()){
                     case "ping":
-                        API.sendChat("pong!");
+                        API.sendChat("/me pong!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
-                   /* case "weird":
+                    case "weird":
                     case "weirdday":
                     case "wierd":
                     case "wierdday":
@@ -180,23 +180,9 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    /*case "ajuda":
+                    case "ajuda":
                         API.sendChat("É Novo no Plug.DJ? Não sabe como isso funciona? > http://i.imgur.com/rVsnr54.png?1");
                     break;
-
-                    case "regras":
-                        if(typeof command[1] == "undefined"){
-                            API.sendChat("Regras da Sala - http://goo.gl/2K0xh8");
-                        }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Regras da Sala - http://goo.gl/2K0xh8");
-                        }else{
-                            API.sendChat("Regras da Sala - http://goo.gl/2K0xh8");
-                        }
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
                         
                     case "irc":
                         if(typeof command[1] == "undefined"){
@@ -212,20 +198,19 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-
-                    /*case "theme":
+                    case "theme":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("In this room, only music related to My Little Pony: Friendship is Magic is allowed. This includes PMVs.");
+                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" In this room, only music related to My Little Pony: Friendship is Magic is allowed. This includes PMVs.");
+                            API.sendChat(command[1]+" Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }else{
-                            API.sendChat("In this room, only music related to My Little Pony: Friendship is Magic is allowed. This includes PMVs.");
+                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
-                        break;*/
+                        break;
 
                     case "commands":
                         if(typeof command[1] == "undefined"){
@@ -389,6 +374,50 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "guilherme":
                         API.sendChat("/me verme!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                
+                    case "frosty":
+                        API.sendChat("/me foda!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "rules":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("Regras da Sala - http://goo.gl/2K0xh8");
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" Regras da Sala - http://goo.gl/2K0xh8");
+                        }else{
+                            API.sendChat("Regras da Sala - http://goo.gl/2K0xh8");
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "regras":
+                        API.sendChat("/me Regras da Sala - http://goo.gl/2K0xh8!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "temas":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                        }else{
+                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                        }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
