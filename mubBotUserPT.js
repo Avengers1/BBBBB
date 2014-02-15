@@ -198,27 +198,13 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "theme":
+                    case "comandos":
                         if(typeof command[1] == "undefined"){
-                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat("Comandos do mubBot - http://playmc.pw/plug/commands.html");
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
+                            API.sendChat(command[1]+" Comandos do mubBot - http://playmc.pw/plug/commands.html");
                         }else{
-                            API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
-                        }
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-
-                    case "commands":
-                        if(typeof command[1] == "undefined"){
-                            API.sendChat("Bot Commands - http://playmc.pw/plug/commands.html");
-                        }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Bot Commands - http://playmc.pw/plug/commands.html");
-                        }else{
-                            API.sendChat("Bot Commands - http://playmc.pw/plug/commands.html");
+                            API.sendChat("Comandos do mubBot - http://playmc.pw/plug/commands.html");
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -308,14 +294,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
 
-                    case "mubplug":
-                        API.sendChat("http://pastebin.com/GwwFEAhX");
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-
                     case "brutos":
                         API.sendChat("/me Bugado!");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
@@ -382,20 +360,6 @@ botMethods.djAdvanceEvent = function(data){
                                                 
                     case "frosty":
                         API.sendChat("/me foda!");
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-                        
-                    case "rules":
-                        if(typeof command[1] == "undefined"){
-                            API.sendChat("Regras da Sala - http://goo.gl/2K0xh8");
-                        }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" Regras da Sala - http://goo.gl/2K0xh8");
-                        }else{
-                            API.sendChat("Regras da Sala - http://goo.gl/2K0xh8");
-                        }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
