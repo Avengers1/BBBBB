@@ -133,7 +133,7 @@ botMethods.djAdvanceEvent = function(data){
                 API.sendChat("@"+API.getDJ().username+" Você já jogou por quanto tempo esta sala permite, é hora de deixar alguém ter a cabine!");
                 botMethods.skip();
             }, mubBot.settings.maxLength * 60000);
-            //API.sendChat("@"+API.getDJs()[0].username+" Esta musica será pulada " + mubBot.settings.maxLength + " minutos a partir de agora, pois excede o comprimento máximo canção.");
+            API.sendChat("@"+API.getDJs()[0].username+" Esta musica será pulada " + mubBot.settings.maxLength + " minutos a partir de agora, pois excede o comprimento máximo canção.");
         }else{
             setTimeout(function(){
                 if(botMethods.checkHistory() > 0 && mubBot.settings.historyFilter){
@@ -382,6 +382,22 @@ botMethods.djAdvanceEvent = function(data){
                         }else{
                             API.sendChat("Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle");
                         }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                
+                    case "etd":
+                        API.sendChat("/me Grupo : https://www.facebook.com/groups/647914285267897/ | Página : https://www.facebook.com/ETDPlugdj | Twitter : https://twitter.com/ETDBR");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                                        
+                    case "fdk":
+                        API.sendChat("/me Grupo : https://www.facebook.com/groups/622101017802230/");
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
