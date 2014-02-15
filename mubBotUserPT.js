@@ -355,6 +355,46 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
+                    case "hiana":
+                        API.sendChat("/me tezuda!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "ipasoca":
+                        API.sendChat("/me noia!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "eltoon":
+                        API.sendChat("/me jhown!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "pedo":
+                        API.sendChat("/me bear!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "guilherme":
+                        API.sendChat("/me verme!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
                 }
             }
         }
