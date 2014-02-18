@@ -421,6 +421,30 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                                                                                            
+                    case "sweet":
+                        API.sendChat("/me PC com AIDS, Joga sapoha fora!");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                                                                
+                    case "critical":
+                        API.sendChat("/me guei");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                                                                                                
+                    case "fusion":
+                        API.sendChat("/me viadaum");
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
                         
                 }
             }
@@ -894,94 +918,94 @@ botMethods.djAdvanceEvent = function(data){
             if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
                 switch(command[1]){
                     case '1':
-                        API.sendChat('Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle');
+                        API.sendChat('/me Os ritmos musicas permitidos são :  Dubstep, Electro, Electro-House, House, Progressive House, Drum and Bass, Drumstep, Drum and Bass, Trance, Trap, Glitch-Hop, Hardstyle');
                         break;
                     case '2':
-                        API.sendChat('Sem flood/spam no chat');
+                        API.sendChat('/me Sem flood/spam no chat');
                         break;
                     case '3':
-                        API.sendChat('Não fique pedindo cargos');
+                        API.sendChat('/me Não fique pedindo cargos');
                         break;
                     case '4':
-                        API.sendChat('Qualquer musica que esteja no historico irá ser pulada');
+                        API.sendChat('/me Qualquer musica que esteja no historico irá ser pulada');
                         break;
                     case '5':
-                        API.sendChat('Salas de Publicidade, sites, etc, sem a aprovação do moderador é motivo para ser expulso');
+                        API.sendChat('/me Salas de Publicidade, sites, etc, sem a aprovação do moderador é motivo para ser expulso');
                         break;
                     case '6':
-                        API.sendChat('Evite tocar musicas longas / permitido : 6:30 é o maximo ;)');
+                        API.sendChat('/me Evite tocar musicas longas / permitido : 5:00 é o maximo ;)');
                         break;
                     case '7':
-                        API.sendChat('Spam no chat irá resultar em chutado');
+                        API.sendChat('/me Spam no chat irá resultar em chutado');
                         break;
                     case '8':
-                        API.sendChat('FOR THE LOVE OF CELESTIA, CONTROL THE CANTERLOCK');
+                        API.sendChat('/me FOR THE LOVE OF CELESTIA, CONTROL THE CANTERLOCK');
                         break;
                     case '9':
-                        API.sendChat('Há uma política de não tolerância para a briga');
+                        API.sendChat('/me Há uma política de não tolerância para a briga');
                         break;
                     case '10':
-                        API.sendChat('Todos os visitantes da sala devem ser tratados igualmente e de forma justa por todos');
+                        API.sendChat('/me Todos os visitantes da sala devem ser tratados igualmente e de forma justa por todos');
                         break;
                     case '11':
-                        API.sendChat('Não peça cargos de Bouncer/Manager/CoHost');
+                        API.sendChat('/me Não peça cargos de Bouncer/Manager/CoHost');
                         break;
                     case '12':
-                        API.sendChat('Respeitar os outros usuários e moderadores, desrespeito contínuo resultará em ser expulso');
+                        API.sendChat('/me Respeitar os outros usuários e moderadores, desrespeito contínuo resultará em ser expulso');
                         break;
                     case '13':
-                        API.sendChat('Não R34/clop/porn/gore. Isso inclui links, músicas e bate-papo. (Se você quiser publicar este material em qualquer lugar, falar com um moderador sobre ser adicionado ao grupo de Skype, você pode publicá-la lá com marcas próprias [NSFW / NSFL])');
+                        API.sendChat('/me Sem R34/clop/porn/gore. Isso inclui links, músicas e bate-papo. (Se você quiser publicar este material em qualquer lugar, falar com um moderador sobre ser adicionado ao grupo de Skype, você pode publicá-la lá com marcas próprias [NSFW / NSFL])');
                         break;
                     case '14':
-                        API.sendChat('No playing episodes/non-music shorts unless you’re the (co)host or were giving permission to play a episode/non-music short by a (co)host');
+                        API.sendChat('/me No playing episodes/non-music shorts unless you’re the (co)host or were giving permission to play a episode/non-music short by a (co)host');
                         break;
                     case '15':
-                        API.sendChat('Quando postar links, por favor, adicione NSFW por nada sugestivo (qualquer coisa picante, pornografia, gore, ou trotar não é permitido). Adicionar etiquetas Spoiler quando necessário,');
+                        API.sendChat('/me Quando postar links, por favor, adicione NSFW por nada sugestivo (qualquer coisa picante, pornografia, gore, ou trotar não é permitido). Adicionar etiquetas Spoiler quando necessário,');
                         break;
                     case '16':
-                        API.sendChat('Xingar é permitido com moderação. Insultos racistas e pejorativas pode resultar em ser expulso');
+                        API.sendChat('/me Xingar é permitido com moderação. Insultos racistas e pejorativas pode resultar em ser expulso');
                         break;
                     case '17':
-                        API.sendChat('Apenas Moderadores/Adms podem perguntar quem deu votacao negativa e/ou porque');
+                        API.sendChat('/me Apenas Moderadores/Adms podem perguntar quem deu votacao negativa e/ou porque');
                         break;
                     case '18':
-                        API.sendChat('Representando outros artistas, usuários, etc, podem resultar em ser chutado');
+                        API.sendChat('/me Representando outros artistas, usuários, etc, podem resultar em ser chutado');
                         break;
                     case '19':
-                        API.sendChat('Se você usar o AutoJoin, seja responsavel quando alguem @mencionar o seu nome ou voce vai correr o risco de ser kickado');
+                        API.sendChat('/me Se você usar o AutoJoin, seja responsavel quando alguem @mencionar o seu nome ou voce vai correr o risco de ser kickado');
                         break;
                     case '20':
-                        API.sendChat('Usar contas múltiplas para entrar na lista ou tocar musica não é permitido');
+                        API.sendChat('/me Usar contas múltiplas para entrar na lista ou tocar musica não é permitido');
                         break;
                     case '21':
-                        API.sendChat('Don\'t spam emotes, don\'t use overly large emotes, and don\'t use emotes in your name (Referring to ponymotes)');
+                        API.sendChat('/me Don\'t spam emotes, don\'t use overly large emotes, and don\'t use emotes in your name (Referring to ponymotes)');
                         break;
                     case '22':
-                        API.sendChat('Não fique mendigando fans');
+                        API.sendChat('/me Não fique mendigando fans');
                         break;
                     case '23':
-                        API.sendChat('Songs such as Nigel, Pingas, etc. are subject to being skipped on any day but Sunday. !weird for full list');
+                        API.sendChat('/me Songs such as Nigel, Pingas, etc. are subject to being skipped on any day but Sunday. !weird for full list');
                         break;
                     case '24':
-                        API.sendChat('Don\'t RP (roleplay) excessively in plug chat, keep it in Skype instead');
+                        API.sendChat('/me Don\'t RP (roleplay) excessively in plug chat, keep it in Skype instead');
                         break;
                     case '25':
-                        API.sendChat('Se você tem alguma queixa contra algum dos adms da sala, não fique argumentando no chat, apenas chame um dos Managers, Ou Co-Host/Host)');
+                        API.sendChat('/me Se você tem alguma queixa contra algum dos adms da sala, não fique argumentando no chat, apenas chame um dos Managers, Ou Co-Host/Host)');
                         break;
                     case '26':
-                        API.sendChat('Não use nomes longos ou ofensivos');
+                        API.sendChat('/me Não use nomes longos ou ofensivos');
                         break;
                     case '27':
-                        API.sendChat('Divirtam-se na sala !');
+                        API.sendChat('/me Divirtam-se na sala !');
                         break;
                     case '34':
-                        API.sendChat('hu3 hu3 hu3');
+                        API.sendChat('/me hu3 hu3 hu3');
                         break;
                     case '99':
-                        API.sendChat('Just no..');
+                        API.sendChat('/me Just no..');
                         break;
                     default:
-                        API.sendChat('Regra desconhecida!');
+                        API.sendChat('/me Regra desconhecida!');
                         break;
                 }
             }
