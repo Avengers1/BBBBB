@@ -42,7 +42,7 @@ mubBot.settings.removedFilter = true;
 //Emub                      DerpTheBass                 [#808]                          eBot
 mubBot.admins = ["50aeaf683e083e18fa2d187e", "50aeb07e96fba52c3ca04ca8", "50aeb607c3b97a2cb4c35ac1", "51264d96d6e4a966883b0702"];
 
-mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","victor sa","victor sá"];
+mubBot.filters.swearWords = ["fuck","shit","bitch","cunt","twat","fag","queer","dumbass","putaria","p0taria","viado","viadu","bugador","fi duma rapariga","merda","caga","retardado","bosta","fdp","vtnc","vsf","funde","viadao","victor sa","gay","cu","cú","viado","viadagem"];
 
 mubBot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","nigga","n1gga","preto","pretu","negro","black"];
 
