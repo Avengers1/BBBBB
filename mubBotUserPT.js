@@ -678,7 +678,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
 
                     case "interactive":
-                    case "into"
+                    case "into":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
                             mubBot.settings.interactive ? API.sendChat("o Bot é interativo.") : API.sendChat("O Bot não é interativo.");
                         }
