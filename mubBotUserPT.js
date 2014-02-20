@@ -16,7 +16,7 @@ mubBot.misc.version = "2.0.30";
 mubBot.misc.origin = "Este bot foi criado pelo Emub e ,DerpTheBass' sozinho, e é protegido por direitos autorais!";
 mubBot.misc.changelog = "Traduzido para Português";
 mubBot.misc.ready = true;
-mubBot.misc.lockSkipping = false;
+mubBot.misc.lockSkipping = true;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
 
@@ -132,7 +132,7 @@ botMethods.djAdvanceEvent = function(data){
             mubBot.pubVars.skipOnExceed = setTimeout( function(){
                 API.sendChat("@"+API.getDJ().username+" Você já jogou por quanto tempo esta sala permite, é hora de deixar alguém ter a cabine!");
                 botMethods.skip();
-            }, mubBot.settings.maxLength * 60000);
+            }, mubBot.settings.maxLength * 60);
             API.sendChat("@"+API.getDJs()[0].username+" Esta musica será pulada " + mubBot.settings.maxLength + " minutos a partir de agora, pois excede o comprimento máximo canção.");
         }else{
             setTimeout(function(){
